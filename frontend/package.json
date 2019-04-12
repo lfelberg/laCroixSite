@@ -14,7 +14,7 @@
     "build": "ember build",
     "lint:hbs": "ember-template-lint .",
     "lint:js": "eslint .",
-    "start": "ember serve",
+    "start": "ember server -p 3000 --proxy http://localhost:3200",
     "test": "ember test"
   },
   "devDependencies": {

@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get 'api/invitations', controller: 'invitations', action: 'index'
+  post 'api/invitations', controller: 'invitations', action: 'create'
 end
