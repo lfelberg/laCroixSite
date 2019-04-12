@@ -7,8 +7,8 @@ export default Controller.extend({
 
   actions: {
     saveInvitation() {
-      const { emailAddress } = this;
-      const newInvitation = this.store.createRecord('invitation', { email: emailAddress });
+      const email = this.emailAddress;
+      const newInvitation = this.store.createRecord('invitation', { email });
 
       newInvitation.save()
         .then(() => {

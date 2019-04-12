@@ -1,5 +1,6 @@
 class InvitationsController < ApplicationController
   def index
+    puts invitations_list.to_json
     render json: { invitations: invitations_list.to_json }
   end
 
