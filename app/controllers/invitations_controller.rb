@@ -1,13 +1,13 @@
 class InvitationsController < ApplicationController
   def index
-    puts invitations_list.to_json
-    render json: { invitations: invitations_list.to_json }
+    data = { invitation: invitations_list }
+    render :json => data
   end
 
   def create
-    invitation = params[:invitation]
-    invite = Invitation.create(email: invitation[:email])
-    render json: { invitation: invite.to_json }
+    invite = params[:invitation]
+    invitation = Invitation.create(email: invite[:email])
+    render :json => { invitation: invitation }
   end
 
   private
