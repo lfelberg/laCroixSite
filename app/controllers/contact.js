@@ -1,8 +1,17 @@
 import Controller from '@ember/controller';
+import { computed } from '@ember/object';
+import { lte } from '@ember/object/computed';
+import { validateEmail } from 'la-croix-site/helpers/validate-email';
 
 export default Controller.extend({
   emailAddress: '',
   message: '',
+
+  isMessageTooShort: lte('message.length', 5),
+
+  invalidEmailAndMessage: computed('emailAddress', 'isMessageTooShort', function() {
+    return this.isMessageTooShort || !validateEmail(this.emailAddress);
+  }),
 
   clearAll() {
     this.set('emailAddress', '');
@@ -11,7 +20,7 @@ export default Controller.extend({
 
   actions: {
     sendMessage() {
-      this.set('responseMessage', `Thanks! We've just saved your email: ${this.emailAddress}`);
+      this.set('responseMessage', `Thanks for the message!`);
       this.clearAll();
     }
   }
