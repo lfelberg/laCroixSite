@@ -20,7 +20,7 @@ export default Controller.extend({
 
   actions: {
     sendMessage() {
-      this.set('responseMessage', `Thanks for the message!`);
+      this.set('responseMessage', `We got your message and we’ll get in touch soon.`);
       this.clearAll();
     }
   }
