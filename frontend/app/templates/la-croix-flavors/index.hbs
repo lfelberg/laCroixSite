@@ -1,0 +1,11 @@
+{{#each model as |flavor|}}
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">{{flavor.flavor}}</h3>
+    </div>
+    <div class="panel-body">
+      <img src={{flavor.image_url}} alt={{flavor.flavor}}>
+      <p>{{flavor.description}}</p>
+    </div>
+  </div>
+{{/each}}

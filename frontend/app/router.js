@@ -14,7 +14,7 @@ Router.map(function() {
     this.route('invitations');
   });
 
-  this.route('la-croix', function() {
+  this.route('la-croixs', function() {
     this.route('new');
   });
 
