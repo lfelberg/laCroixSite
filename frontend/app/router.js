@@ -13,6 +13,14 @@ Router.map(function() {
   this.route('admin', function() {
     this.route('invitations');
   });
+
+  this.route('la-croix', function() {
+    this.route('new');
+  });
+
+  this.route('la-croix-flavors', function() {
+    this.route('new');
+  });
 });
 
 export default Router;

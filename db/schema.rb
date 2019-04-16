@@ -10,10 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_12_201831) do
+ActiveRecord::Schema.define(version: 2019_04_16_171800) do
 
   create_table "invitations", force: :cascade do |t|
     t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "la_croix_flavors", force: :cascade do |t|
+    t.string "flavor"
+    t.string "image_url"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "la_croixes", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "la_croix_flavor_id"
+    t.text "notes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
