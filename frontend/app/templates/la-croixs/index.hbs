@@ -1,14 +1,14 @@
-<h2>Flavors</h2>
+<h2>Tastings</h2>
 
-{{#each model as |flavor|}}
+{{#each model as |tasting|}}
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h3 class="panel-title">{{flavor.flavor}}</h3>
+      <h3 class="panel-title">{{tasting.flavor}}</h3>
     </div>
     <div class="panel-body">
-      <p>User: {{flavor.description}}</p>
-      <p>Notes: {{flavor.notes}}</p>
-      <p>{{flavor.createdAt}}</p>
+      <p>User: {{tasting.user}}</p>
+      <p>Notes: {{tasting.notes}}</p>
+      <p>{{tasting.createdAt}}</p>
     </div>
   </div>
 {{/each}}

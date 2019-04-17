@@ -2,14 +2,17 @@ import Route from '@ember/routing/route';
 
 export default Route.extend({
   model() {
-    return this.store.createRecord('laCroix');
+    return Ember.RSVP.hash({
+      flavors: this.store.findAll('laCroixFlavor'),
+      tastings: this.store.createRecord('laCroix'),
+    });
   },
 
   actions: {
-    saveFlavor(newLaCroix) {
+    saveNote(newLaCroix) {
       newLaCroix.save()
         .then(() => this.transitionTo('la-croixs'))
         .catch((err) => console.log(`Err: ${err}`));
     }
   }
-})
+});
