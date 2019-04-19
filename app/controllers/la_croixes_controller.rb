@@ -1,22 +1,22 @@
 class LaCroixesController < ApplicationController
   def index
-    data = { la_croix_flavor: la_croix_flavors_list }
+    data = { la_croix: la_croixs_list }
     render :json => data
   end
 
   def create
     la_croix = params[:laCroix]
     new_la_croix = LaCroix.create(
-      flavor: la_croix_flavor[:flavor],
-      image_url: la_croix_flavor[:image_url],
-      description: la_croix_flavor[:description],
-      )
+      user_id: 0,
+      la_croix_flavor_id: la_croix[:la_croix_flavor_id],
+      notes: la_croix[:notes],
+    )
     render :json => { la_croix: new_la_croix }
   end
 
   private
 
-  def la_croix_flavors_list
-    @la_croix_flavors_list = LaCroixFlavor.order(:flavor)
+  def la_croixs_list
+    @la_croixs_list = LaCroix.order(:id)
   end
 end

@@ -4,11 +4,16 @@
   <div class="form-group">
     <label class="col-sm-2 control-label">Flavor</label>
     <div class="col-sm-10">
-      <select clas="form-control">
-        {{#each model.flavors as |flavor|}}
-          <option value={{flavor.id}}>{{flavor.flavor}}</option>
-        {{/each}}
-      </select>
+      {{#power-select
+        selected=chosenFlavor
+        options=model.flavors
+        seachField="flavor"
+        placeholder="Please chose a flavor"
+        onchange=(action (mut chosenFlavor))
+        as |flavor|
+      }}
+        {{flavor.flavor}}
+      {{/power-select}}
     </div>
   </div>
   <div class="form-group">
