@@ -1,0 +1,2 @@
+class LaCroixFlavor < ApplicationRecord
+end

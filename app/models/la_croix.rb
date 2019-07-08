@@ -1,0 +1,2 @@
+class LaCroix < ApplicationRecord
+end

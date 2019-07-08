@@ -1,0 +1,35 @@
+<h1>Contact</h1>
+
+<div class="form-horizontal form-group form-group-lg row">
+  <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-1 col-md-5 col-md-offset-2">
+    {{input
+      type="email"
+      class="form-control"
+      placeholder="Enter your email:"
+      autofocus="autofocus"
+      value=emailAddress
+    }}
+  </div>
+  <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-1 col-md-5 col-md-offset-2">
+    {{textarea
+      class="form-control"
+      rows="7"
+      placeholder="Your message. (at least 5 characters)"
+      autofocus="autofocus"
+      value=message
+    }}
+  </div>
+  <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-1 col-md-5 col-md-offset-2">
+    <button
+      disabled={{invalidEmailAndMessage}}
+      class="btn btn-primary btn-lg btn-block"
+      {{action 'sendMessage'}}
+    >Send message</button>
+  </div>
+</div>
+
+<p>Or, feel free to <a href="mailto:lisaemly@gmail.com">reach out</a>! Comments and site improvements are always welcome!</p>
+
+{{#if responseMessage}}
+  <div class="alert alert-success">{{responseMessage}}</div>
+{{/if}}
